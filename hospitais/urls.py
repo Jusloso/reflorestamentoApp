@@ -19,9 +19,11 @@ from django.conf.urls.static import static
 from django.conf.urls import url, include
 from django.views.static import serve
 from django.conf import settings
+from django.views.generic.base import TemplateView
 from hospitalapp.views import index, florestas, criar_floresta, editar, deletar
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^$', TemplateView.as_view(template_name='hospital/index.html'), name='index'),
     path('index/', index, name='index'),
     path('florestas/', florestas, name='florestas'),
     path('criar_floresta/', criar_floresta, name='criar_floresta'),
