@@ -1,0 +1,14 @@
+{%extends 'hospital/base.html'%}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="col-lg-4 container">
+<form method="POST"> 
+    {% csrf_token %}
+    {{form | crispy}}
+
+    <input type="submit" value="logar" class="btn btn-success input-group">
+
+</form>
+</div>
+{% endblock content %}
